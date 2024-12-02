@@ -2,20 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 定义主题变量 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: linear-gradient(90deg, #4f46e5, #6b21a8); /* 蓝紫色渐变 */
+  --foreground: #ffffff; /* 白色文字 */
+  --card-bg: rgba(255, 255, 255, 0.1); /* 卡片背景 */
+  --card-shadow: rgba(0, 0, 0, 0.15); /* 卡片阴影 */
+  --font-primary: 'Inter', Arial, Helvetica, sans-serif; /* 改进字体 */
+  --line-height: 1.6; /* 行间距 */
+  --transition-duration: 0.4s; /* 全局过渡时间 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: linear-gradient(90deg, #1e293b, #0f172a); /* 深色渐变 */
+    --foreground: #e5e7eb; /* 浅灰文字 */
+    --card-bg: rgba(0, 0, 0, 0.3); /* 深色卡片背景 */
+    --card-shadow: rgba(0, 0, 0, 0.5); /* 深色卡片阴影 */
   }
 }
 
+/* 应用全局样式 */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: var(--line-height);
+  transition: background var(--transition-duration) ease, color var(--transition-duration) ease;
+}
+
+/* 卡片样式示例 */
+.card {
+  background: var(--card-bg);
+  color: var(--foreground);
+  border-radius: 8px; /* 圆角更柔和 */
+  box-shadow: 0 4px 6px var(--card-shadow);
+  padding: 1rem;
+  margin: 1rem;
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+}
+
+.card:hover {
+  transform: translateY(-4px); /* 鼠标悬停时微妙浮起 */
+  box-shadow: 0 6px 12px var(--card-shadow);
+}
+
+/* 链接样式 */
+a {
+  color: var(--foreground);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--foreground);
+  transition: color var(--transition-duration) ease, border-color var(--transition-duration) ease;
+}
+
+a:hover {
+  color: #ff79c6; /* 鼠标悬停时的亮色 */
+  border-color: #ff79c6;
 }
