@@ -11,7 +11,7 @@ export default {
       colors: {
         // background: "var(--background)",
         // foreground: "var(--foreground)",
-        'blue-purple': 'linear-gradient(90deg, #4f46e5, #6b21a8)',
+        // 'blue-purple': 'linear-gradient(90deg, #4f46e5, #6b21a8)',
       },
       borderRadius: {
         'xl': '1rem',
